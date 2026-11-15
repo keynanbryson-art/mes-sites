@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Près de chez moi – trouve un pro de ton quartier</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--tx:#14213d;--mu:#5b6578;--bd:#d9deea;--ac:#fcbf49;--on:#14213d;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151f;--card:#1a2233;--tx:#eef1f7;--mu:#9aa6bd;--bd:#2c3750;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10151f;--card:#1a2233;--tx:#eef1f7;--mu:#9aa6bd;--bd:#2c3750;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
+main{max-width:520px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.7rem;line-height:1.15;margin:0 0 6px}
+p.s{color:var(--mu);margin:0 0 18px}
+input{width:100%;padding:12px;border:1.5px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font:inherit}
+input:focus,button:focus-visible{outline:3px solid var(--ac);outline-offset:1px}
+.ch{display:flex;gap:8px;overflow-x:auto;padding:12px 0}
+.ch button{flex:none;padding:8px 14px;border-radius:99px;border:1.5px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;cursor:pointer}
+.ch button[aria-pressed="true"]{background:var(--ac);color:var(--on);border-color:var(--ac);font-weight:700}
+.c{background:var(--card);border:1.5px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:12px}
+.c h3{margin:0;font-size:1.15rem}
+.c .m{color:var(--mu);margin:2px 0 8px}
+.c p{margin:0 0 12px}
+.t{display:inline-block;font-size:.8rem;padding:2px 8px;border-radius:6px;background:var(--bd);color:var(--mu)}
+.vide{color:var(--mu);padding:20px 0}.pp2{border:1.5px solid var(--bd);border-radius:14px;padding:16px;margin-top:20px;background:var(--card)}.pp2 h2{margin:0 0 8px;font-size:1.1rem}.pp2 label{display:block;margin:10px 0 4px;font-weight:700;font-size:.95rem}.pp2 input{margin-bottom:10px}.add{margin-top:20px}.add summary{cursor:pointer;font-weight:700}.add label{display:block;margin:10px 0 4px;font-weight:700;font-size:.95rem}.add input{margin:0}.add #f-v{width:auto;display:inline-block;margin-right:8px}.add label[for=f-v]{display:inline}.add button,.pay{margin-top:12px;padding:10px 16px;border-radius:10px;border:0;background:var(--ac);color:var(--on);font:inherit;font-weight:700;cursor:pointer}.pay{display:block;width:100%}.x{margin-top:10px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--bd);background:transparent;color:var(--mu);font:inherit;cursor:pointer}.w{display:block;text-align:center;background:#0b7a55;color:#fff;padding:11px;border-radius:10px;text-decoration:none;font-weight:700;margin-bottom:10px}.pp{margin-top:10px}.pp input{margin-bottom:8px}
+.n{color:var(--mu);font-size:.9rem;margin-top:20px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.top a{color:var(--tx);font-weight:700}#lg{padding:6px 14px;border-radius:99px;border:1.5px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;cursor:pointer}
+</style></head><body><main><div class="top"><button id="lg" type="button">EN</button><a id="lk" href="mapage.html" target="_blank" rel="noopener">Créer ma page</a></div>
+<h1>Trouve un pro, où que tu sois</h1>
+<p class="s">Beauté, restauration, cours, livraison, design, artisanat et bien plus : cherche par activité, par ville ou par pays. Pas de pub.</p>
+<input id="q" type="search" placeholder="Cherche un nom, une ville ou un pays" aria-label="Recherche" autocomplete="off">
+<div class="ch" id="ch"></div>
+<div id="l" aria-live="polite"></div>
+<section class="pp2"><h2>Passer en vedette</h2><p id="vp"></p><label for="v-n">Nom de ton activité</label><input id="v-n" autocomplete="off"><a id="v-a" class="w" target="_blank" rel="noopener" href="#">J’ai payé, prévenir sur WhatsApp</a></section><details class="add"><summary>Mes réglages (pour recevoir les paiements)</summary><label for="s-m">Mon numéro Mobile Money (avec l’indicatif)</label><input id="s-m" type="tel" inputmode="tel"><label for="s-w">Mon WhatsApp (avec l’indicatif)</label><input id="s-w" type="tel" inputmode="tel"><label for="s-p">Prix par mois (FCFA)</label><input id="s-p" type="number" min="0" inputmode="numeric"><button id="sa" type="button">Enregistrer</button></details><details class="add"><summary>Ajouter une fiche</summary><label for="f-n">Nom de l’activité</label><input id="f-n" autocomplete="off"><label for="f-c">Activité</label><input id="f-c" autocomplete="off"><label for="f-q">Ville</label><input id="f-q" autocomplete="off"><label for="f-p">Pays</label><input id="f-p" autocomplete="off"><label for="f-d">Description</label><input id="f-d" autocomplete="off"><label for="f-t">WhatsApp avec l’indicatif (ex. 237612345678)</label><input id="f-t" type="tel" inputmode="tel"><label for="f-m">Numéro Mobile Money pour recevoir les paiements (avec l’indicatif)</label><input id="f-m" type="tel" inputmode="tel"><p><input id="f-v" type="checkbox"><label for="f-v">En vedette (le commerçant a payé)</label></p><button id="fa" type="button">Ajouter à l’annuaire</button><p class="n">Les fiches ajoutées ici restent sur ton téléphone. Demande l’accord du commerçant avant d’ajouter son numéro. L’argent va directement au commerçant : tu ne touches jamais l’argent des autres.</p></details><p class="n">Version de démonstration : ces fiches sont des exemples inventés. Les vraies activités arriveront avec leurs pages MaPage.</p>
+</main>
+<script>
+const D=[
+{n:"Salon Élégance",c:"Coiffure",q:"Yaoundé",p:"Cameroun",d:"Tresses et coupes, dès 1 000 F."},
+{n:"Chez Tantine",c:"Restauration",q:"Yaoundé",p:"Cameroun",d:"Ndolé et poulet DG, livraison dans le quartier."},
+{n:"Studio Lumière",c:"Photo et vidéo",q:"Douala",p:"Cameroun",d:"Photos de mariage et montage vidéo."},
+{n:"Code Académie",c:"Cours et formation",q:"Lagos",p:"Nigeria",d:"Cours de programmation pour débutants, en ligne."},
+{n:"Atelier Nina",c:"Couture",q:"Dakar",p:"Sénégal",d:"Tenues sur mesure et retouches rapides."},
+{n:"Vite Livré",c:"Livraison",q:"Abidjan",p:"Côte d’Ivoire",d:"Livraison de colis en moto dans la journée."},
+{n:"Maison Verte",c:"Agriculture",q:"Kigali",p:"Rwanda",d:"Légumes frais de petits producteurs."},
+{n:"Répar’Phone",c:"Réparation",q:"Paris",p:"France",d:"Écrans, batteries et déblocage de téléphones."},
+{n:"Design Express",c:"Design et numérique",q:"Montréal",p:"Canada",d:"Logos, affiches et petits sites web."},
+{n:"Clean Pro",c:"Nettoyage",q:"Nairobi",p:"Kenya",d:"Ménage pour maisons et bureaux."}
+];
+let cat="Tous";
+const K='annuaire-fiches';
+function load(){try{return JSON.parse(localStorage.getItem(K)||'[]')}catch(e){return[]}}
+function save(a){try{localStorage.setItem(K,JSON.stringify(a))}catch(e){}}
+load().forEach(x=>D.push(x));
+const cats=()=>["Tous",...new Set(D.map(x=>x.c))];
+const $=i=>document.getElementById(i);
+const EN={'Trouve un pro, où que tu sois':'Find a pro, wherever you are','Beauté, restauration, cours, livraison, design, artisanat et bien plus : cherche par activité, par ville ou par pays. Pas de pub.':'Beauty, food, courses, delivery, design, crafts and much more: search by activity, city or country. No ads.','Version de démonstration : ces fiches sont des exemples inventés. Les vraies activités arriveront avec leurs pages MaPage.':'Demo version: these listings are made-up examples. Real businesses will arrive with their MaPage pages.','Créer ma page':'Create my page','Cherche un nom, une ville ou un pays':'Search a name, a city or a country','Tous':'All','Passer en vedette':'Get featured','Nom de ton activité':'Business name','Mes réglages (pour recevoir les paiements)':'My settings (to receive payments)','Mon numéro Mobile Money (avec l’indicatif)':'My Mobile Money number (with country code)','Mon WhatsApp (avec l’indicatif)':'My WhatsApp (with country code)','Prix par mois (FCFA)':'Price per month (FCFA)','Enregistrer':'Save','Le propriétaire doit d’abord remplir ses réglages.':'The owner must fill in the settings first.','Envoie':'Send','par mois au':'per month to','avec MTN MoMo ou Orange Money, puis préviens-nous.':'with MTN MoMo or Orange Money, then let us know.','pour mettre en avant':'to feature','Ajouter une fiche':'Add a listing','Nom de l’activité':'Business name','Activité':'Activity','Ville':'City','Pays':'Country','Description':'Description','WhatsApp avec l’indicatif (ex. 237612345678)':'WhatsApp with country code (e.g. 237612345678)','Numéro Mobile Money pour recevoir les paiements (avec l’indicatif)':'Mobile Money number to receive payments (with country code)','En vedette (le commerçant a payé)':'Featured (the merchant paid)','Ajouter à l’annuaire':'Add to the directory','Contacter sur WhatsApp':'Contact on WhatsApp','Supprimer':'Delete','Ma fiche':'My listing','En vedette':'Featured','Les fiches ajoutées ici restent sur ton téléphone. Demande l’accord du commerçant avant d’ajouter son numéro. L’argent va directement au commerçant : tu ne touches jamais l’argent des autres.':'Listings added here stay on your phone. Ask the merchant’s permission before adding their number. Money goes straight to the merchant: you never handle other people’s money.','Payer par Mobile Money':'Pay with Mobile Money','Montant en FCFA':'Amount in FCFA','Envoie le montant au':'Send the amount to','avec MTN MoMo ou Orange Money, puis préviens le commerçant.':'with MTN MoMo or Orange Money, then let the merchant know.','J’ai payé, prévenir sur WhatsApp':'I paid, notify on WhatsApp','Bonjour, j’ai envoyé ':'Hello, I sent ','Exemple':'Example','Aucun résultat. Essaie un autre quartier ou une autre activité.':'No results. Try another neighborhood or activity.',' à ':' in ','Coiffure':'Hairdressing','Restauration':'Food and catering','Photo et vidéo':'Photo and video','Cours et formation':'Courses and training','Couture':'Tailoring','Livraison':'Delivery','Agriculture':'Farming','Réparation':'Repairs','Design et numérique':'Design and digital','Nettoyage':'Cleaning','Cameroun':'Cameroon','Sénégal':'Senegal','Côte d’Ivoire':'Ivory Coast','Tresses et coupes, dès 1 000 F.':'Braids and haircuts, from 1,000 F.','Ndolé et poulet DG, livraison dans le quartier.':'Ndolé and poulet DG, delivered in the neighborhood.','Photos de mariage et montage vidéo.':'Wedding photos and video editing.','Cours de programmation pour débutants, en ligne.':'Online programming courses for beginners.','Tenues sur mesure et retouches rapides.':'Custom outfits and quick alterations.','Livraison de colis en moto dans la journée.':'Same-day parcel delivery by motorbike.','Légumes frais de petits producteurs.':'Fresh vegetables from small farmers.','Écrans, batteries et déblocage de téléphones.':'Screens, batteries and phone unlocking.','Logos, affiches et petits sites web.':'Logos, posters and small websites.','Ménage pour maisons et bureaux.':'Cleaning for homes and offices.'};
+let L='fr';const tr=s=>L==='en'&&EN[s]||s;
+const T=[...document.querySelectorAll('h1,p.s,.n,#lk,summary,.add label,.add button,.pp2 h2,.pp2 label,#v-a')].filter(e=>!e.children.length);T.forEach(e=>e.dataset.fr=e.textContent);
+$('q').dataset.pf=$('q').placeholder;
+$('lg').onclick=()=>{L=L==='fr'?'en':'fr';$('lg').textContent=L==='fr'?'EN':'FR';T.forEach(e=>e.textContent=tr(e.dataset.fr));$('q').placeholder=tr($('q').dataset.pf);document.documentElement.lang=L;chips();list();vp()};
+function chips(){
+$("ch").innerHTML="";
+cats().forEach(k=>{const b=document.createElement("button");b.textContent=tr(k);b.setAttribute("aria-pressed",k===cat);b.onclick=()=>{cat=k;chips();list()};$("ch").appendChild(b)});
+}
+function list(){
+const s=$("q").value.trim().toLowerCase(),L=$("l");L.innerHTML="";
+const r=D.filter(x=>(cat==="Tous"||x.c===cat)&&(x.n+" "+x.q+" "+x.p+" "+x.c).toLowerCase().includes(s)).sort((a,b)=>(b.v?1:0)-(a.v?1:0));
+if(!r.length){L.innerHTML='<p class="vide">'+tr('Aucun résultat. Essaie un autre quartier ou une autre activité.')+'</p>';return}
+r.forEach(x=>{const e=document.createElement("div");e.className="c";
+e.innerHTML='<h3></h3><p class="m"></p><p></p><span class="t"></span>';
+e.children[0].textContent=x.n;e.children[1].textContent=tr(x.c)+tr(" à ")+x.q+" ("+tr(x.p)+")";e.children[2].textContent=tr(x.d);e.children[3].textContent=(x.v?'⭐ '+tr('En vedette')+' · ':'')+tr(x.mine?'Ma fiche':'Exemple');
+if(x.t){const a=document.createElement('a');a.className='w';a.href='https://wa.me/'+x.t;a.target='_blank';a.rel='noopener';a.textContent=tr('Contacter sur WhatsApp');e.insertBefore(a,e.children[3])}
+if(x.m){const bt=document.createElement('button');bt.className='pay';bt.textContent=tr('Payer par Mobile Money');const pn=document.createElement('div');pn.hidden=true;pn.className='pp';const ip=document.createElement('input');ip.type='number';ip.min='0';ip.placeholder=tr('Montant en FCFA');const tx=document.createElement('p');tx.textContent=tr('Envoie le montant au')+' +'+x.m+' '+tr('avec MTN MoMo ou Orange Money, puis préviens le commerçant.');const ok=document.createElement('a');ok.className='w';ok.target='_blank';ok.rel='noopener';ok.textContent=tr('J’ai payé, prévenir sur WhatsApp');const upd=()=>{ok.href='https://wa.me/'+(x.t||x.m)+'?text='+encodeURIComponent(tr('Bonjour, j’ai envoyé ')+(ip.value||'…')+' FCFA')};ip.oninput=upd;upd();pn.append(ip,tx,ok);bt.onclick=()=>{pn.hidden=!pn.hidden};e.append(bt,pn)}
+if(x.mine){const d=document.createElement('button');d.className='x';d.textContent=tr('Supprimer');d.onclick=()=>{save(load().filter(y=>y.id!==x.id));D.splice(D.findIndex(y=>y.id===x.id),1);chips();list()};e.appendChild(d)}
+L.appendChild(e)});
+}
+$("q").addEventListener("input",list);
+$('fa').onclick=()=>{const v=i=>$(i).value.trim(),dg=i=>{const d=$(i).value.replace(/\D/g,'').replace(/^0+/,'');return d.length>=8?d:''};if(!v('f-n')||!v('f-c'))return;const x={id:Date.now(),n:v('f-n'),c:v('f-c'),q:v('f-q'),p:v('f-p'),d:v('f-d'),t:dg('f-t'),m:dg('f-m'),v:$('f-v').checked,mine:true};const a=load();a.push(x);save(a);D.push(x);['f-n','f-c','f-q','f-p','f-d','f-t','f-m'].forEach(i=>$(i).value='');$('f-v').checked=false;chips();list()};
+chips();list();
+const KS='annuaire-reglages';
+function getS(){try{return JSON.parse(localStorage.getItem(KS)||'{}')}catch(e){return{}}}
+function vp(){const s=getS(),p=$('vp');if(!s.m){p.textContent=tr('Le propriétaire doit d’abord remplir ses réglages.');$('v-a').style.display='none';return}$('v-a').style.display='';p.textContent=tr('Envoie')+' '+(s.p||'…')+' FCFA '+tr('par mois au')+' +'+s.m+' '+tr('avec MTN MoMo ou Orange Money, puis préviens-nous.');const u=()=>{$('v-a').href='https://wa.me/'+(s.w||s.m)+'?text='+encodeURIComponent(tr('Bonjour, j’ai envoyé ')+(s.p||'…')+' FCFA '+tr('pour mettre en avant')+' '+($('v-n').value||'…'))};$('v-n').oninput=u;u()}
+$('sa').onclick=()=>{const dg=i=>$(i).value.replace(/\D/g,'').replace(/^0+/,'');try{localStorage.setItem(KS,JSON.stringify({m:dg('s-m'),w:dg('s-w'),p:$('s-p').value}))}catch(e){}vp()};
+const s0=getS();$('s-m').value=s0.m||'';$('s-w').value=s0.w||'';$('s-p').value=s0.p||'';vp();
+</script></body></html>
