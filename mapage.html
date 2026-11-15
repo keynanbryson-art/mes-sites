@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MaPage – crée ta page gratuite</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--tx:#14213d;--mu:#5b6578;--bd:#d9deea;--ac:#fcbf49;--on:#14213d;--wa:#0b7a55;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151f;--card:#1a2233;--tx:#eef1f7;--mu:#9aa6bd;--bd:#2c3750;--wa:#25a36f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10151f;--card:#1a2233;--tx:#eef1f7;--mu:#9aa6bd;--bd:#2c3750;--wa:#25a36f;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
+main{max-width:480px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.7rem;line-height:1.15;margin:0 0 6px}
+p.s{color:var(--mu);margin:0 0 20px}
+label{display:block;font-weight:700;margin:14px 0 4px;font-size:.95rem}
+input,select,textarea{width:100%;padding:12px;border:1.5px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font:inherit}
+input:focus,select:focus,textarea:focus,a:focus-visible{outline:3px solid var(--ac);outline-offset:1px}
+textarea{min-height:84px;resize:vertical}
+h2{font-size:1.05rem;margin:28px 0 10px}
+.pv{background:var(--card);border:1.5px solid var(--bd);border-radius:14px;padding:18px;border-top:6px solid var(--ac)}
+.pv h3{margin:0;font-size:1.35rem}
+.pv .m{color:var(--mu);margin:2px 0 12px}
+.pv .o{white-space:pre-wrap;margin:0 0 16px}
+.b{display:block;text-align:center;padding:13px;border-radius:10px;font-weight:700;text-decoration:none}
+.go{background:var(--wa);color:#fff}
+.sh{background:var(--ac);color:var(--on);margin-top:14px}
+.n{color:var(--mu);font-size:.9rem;margin-top:14px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.top a{color:var(--tx);font-weight:700}#lg{padding:6px 14px;border-radius:99px;border:1.5px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;cursor:pointer}
+</style></head><body><main><div class="top"><button id="lg" type="button">EN</button><a id="lk" href="pres-de-chez-moi.html" target="_blank" rel="noopener">Trouver un pro</a></div>
+<h1>Crée la page de ton activité, gratuitement</h1>
+<p class="s">Remplis les champs. Ta page apparaît en dessous et tu la partages sur WhatsApp.</p>
+<label for="nom">Nom de ton activité</label><input id="nom" placeholder="Ex. Studio Lumière, Atelier Nina…" autocomplete="off">
+<label for="metier">Activité</label>
+<select id="metier"><optgroup label="Beauté et mode"><option>Coiffure</option><option>Couture</option><option>Maquillage</option><option>Vêtements et accessoires</option></optgroup><optgroup label="Alimentation"><option>Restauration</option><option>Pâtisserie</option><option>Agriculture</option></optgroup><optgroup label="Métiers et réparation"><option>Réparation</option><option>Électricité et plomberie</option><option>Menuiserie et artisanat</option><option>Nettoyage</option></optgroup><optgroup label="Services"><option>Livraison</option><option>Transport</option><option>Photo et vidéo</option><option>Événements</option><option>Immobilier</option></optgroup><optgroup label="Éducation et numérique"><option>Cours et formation</option><option>Design et numérique</option><option>Freelance</option></optgroup><optgroup label="Autres"><option>Boutique en ligne</option><option>Sport et bien-être</option><option>Autre</option></optgroup></select>
+<label for="quartier">Ville ou quartier</label><input id="quartier" placeholder="Ex. Yaoundé, Dakar, Paris…" autocomplete="off"><label for="pays">Pays de ton numéro WhatsApp</label><select id="pays"><option value="237">Cameroun (+237)</option><option value="234">Nigeria (+234)</option><option value="225">Côte d’Ivoire (+225)</option><option value="221">Sénégal (+221)</option><option value="241">Gabon (+241)</option><option value="243">RD Congo (+243)</option><option value="229">Bénin (+229)</option><option value="228">Togo (+228)</option><option value="233">Ghana (+233)</option><option value="212">Maroc (+212)</option><option value="33">France (+33)</option><option value="32">Belgique (+32)</option><option value="1">Canada, États-Unis (+1)</option><option value="44">Royaume-Uni (+44)</option><option value="49">Allemagne (+49)</option></select>
+<label for="offre">Prix et services</label><textarea id="offre" placeholder="Ce que tu proposes, tes prix, tes horaires…"></textarea>
+<label for="tel">Numéro WhatsApp</label><input id="tel" type="tel" inputmode="tel" placeholder="Ton numéro, sans l’indicatif">
+<h2>Ta page</h2>
+<div class="pv"><h3 id="pn"></h3><p class="m" id="pm"></p><p class="o" id="po"></p><a class="b go" id="pb" href="#">Commander sur WhatsApp</a></div>
+<a class="b sh" id="sh" href="#" target="_blank" rel="noopener">Partager ma page sur WhatsApp</a>
+<p class="n">Demande toujours l’accord de la personne concernée avant de partager sa page.</p>
+</main>
+<script>
+const $=i=>document.getElementById(i);
+const EN={'Crée la page de ton activité, gratuitement':'Create your business page, for free','Remplis les champs. Ta page apparaît en dessous et tu la partages sur WhatsApp.':'Fill in the fields. Your page appears below and you share it on WhatsApp.','Nom de ton activité':'Business name','Activité':'Activity','Ville ou quartier':'City or neighborhood','Pays de ton numéro WhatsApp':'Country of your WhatsApp number','Prix et services':'Prices and services','Numéro WhatsApp':'WhatsApp number','Ta page':'Your page','Commander sur WhatsApp':'Order on WhatsApp','Partager ma page sur WhatsApp':'Share my page on WhatsApp','Trouver un pro':'Find a pro','Demande toujours l’accord de la personne concernée avant de partager sa page.':'Always ask the person’s permission before sharing their page.','Coiffure':'Hairdressing','Couture':'Tailoring','Maquillage':'Makeup','Vêtements et accessoires':'Clothing and accessories','Restauration':'Food and catering','Pâtisserie':'Bakery and pastry','Agriculture':'Farming','Réparation':'Repairs','Électricité et plomberie':'Electrical and plumbing','Menuiserie et artisanat':'Carpentry and crafts','Nettoyage':'Cleaning','Livraison':'Delivery','Photo et vidéo':'Photo and video','Événements':'Events','Immobilier':'Real estate','Cours et formation':'Courses and training','Design et numérique':'Design and digital','Boutique en ligne':'Online shop','Sport et bien-être':'Sport and wellness','Autre':'Other','Beauté et mode':'Beauty and fashion','Alimentation':'Food','Métiers et réparation':'Trades and repairs','Éducation et numérique':'Education and digital','Autres':'Other','Ex. Studio Lumière, Atelier Nina…':'E.g. Studio Lumière, Atelier Nina…','Ex. Yaoundé, Dakar, Paris…':'E.g. Yaoundé, Dakar, Paris…','Ce que tu proposes, tes prix, tes horaires…':'What you offer, your prices, your hours…','Ton numéro, sans l’indicatif':'Your number, without the country code','Nom de ton commerce':'Your business name','Tes prix et tes services apparaissent ici.':'Your prices and services appear here.',' à ':' in ','Bonjour, je voudrais commander.':'Hello, I would like to place an order.','Commander : ':'Order: '};
+let L='fr';const tr=s=>L==='en'&&EN[s]||s;
+const T=[...document.querySelectorAll('h1,p.s,label,option,.b,.n,h2,#lk')].filter(e=>!e.children.length);T.forEach(e=>e.dataset.fr=e.textContent);
+const G=[...document.querySelectorAll('optgroup')];G.forEach(g=>g.dataset.fr=g.label);
+const P=[...document.querySelectorAll('[placeholder]')];P.forEach(e=>e.dataset.pf=e.placeholder);
+$('lg').onclick=()=>{L=L==='fr'?'en':'fr';$('lg').textContent=L==='fr'?'EN':'FR';T.forEach(e=>e.textContent=tr(e.dataset.fr));G.forEach(g=>g.label=tr(g.dataset.fr));P.forEach(e=>e.placeholder=tr(e.dataset.pf));document.documentElement.lang=L;draw()};
+function num(){const d=$("tel").value.replace(/\D/g,"").replace(/^0+/,"");return d?$("pays").value+d:""}
+function draw(){
+const n=num(),nom=$("nom").value||tr("Nom de ton commerce"),q=$("quartier").value;
+$("pn").textContent=nom;
+$("pm").textContent=tr($("metier").value)+(q?tr(" à ")+q:"");
+$("po").textContent=$("offre").value||tr("Tes prix et tes services apparaissent ici.");
+const b=$("pb");b.href=n?"https://wa.me/"+n+"?text="+encodeURIComponent(tr("Bonjour, je voudrais commander.")):"#";b.style.opacity=n?1:.55;
+const t=nom+" – "+tr($("metier").value)+(q?tr(" à ")+q:"")+"\n"+$("offre").value+(n?"\n"+tr("Commander : ")+"https://wa.me/"+n:"");
+$("sh").href="https://wa.me/?text="+encodeURIComponent(t);
+}
+["nom","metier","quartier","offre","tel","pays"].forEach(i=>$(i).addEventListener("input",draw));
+draw();
+</script></body></html>
